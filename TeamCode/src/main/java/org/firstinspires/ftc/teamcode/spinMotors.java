@@ -55,8 +55,12 @@ public class spinMotors extends OpMode {
             cDrive.setPower(0);
         }
 
-        if (gamepad1.y){ dDrive.setPower(0.5); }
-        else{ dDrive.setPower(0); }
+        if (gamepad1.y){
+            dDrive.setPower(0.5);
+        }
+        else{
+            dDrive.setPower(0);
+        }
 
     }
 

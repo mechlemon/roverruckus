@@ -51,7 +51,6 @@ import com.qualcomm.robotcore.util.Range;
  */
 
 @TeleOp(name="Basic: Iterative OpMode", group="Iterative Opmode")
-@Disabled
 public class BasicOpModeSample_Iterative extends OpMode
 {
     // Declare OpMode members.
@@ -69,8 +68,8 @@ public class BasicOpModeSample_Iterative extends OpMode
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        aDrive  = hardwareMap.get(DcMotor.class, "left_drive");
-        bDrive = hardwareMap.get(DcMotor.class, "right_drive");
+        aDrive  = hardwareMap.get(DcMotor.class, "aDrive");
+        bDrive = hardwareMap.get(DcMotor.class, "bDrive");
 
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery

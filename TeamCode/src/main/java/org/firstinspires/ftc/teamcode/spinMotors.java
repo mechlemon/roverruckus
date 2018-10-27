@@ -37,29 +37,26 @@ public class spinMotors extends OpMode {
     @Override
     public void loop() {
 
-        if (gamepad1.a){
-            aDrive.setPower(0.5);
-        }else{
-            aDrive.setPower(0);
-        }
+        telemetry.addData("cDrive", cDrive.getCurrentPosition());
 
-        if (gamepad1.b){
-            bDrive.setPower(-0.5);
-        }else{
-            bDrive.setPower(0);
-        }
 
-        if (gamepad1.x){
+        if (gamepad1.y){
+            aDrive.setPower(0.9);
+            bDrive.setPower(-0.9);
+        }else if (gamepad1.a){
+            aDrive.setPower(-0.9);
+            bDrive.setPower(0.9);
+        }
+            aDrive.setPower(gamepad1.left_stick_y);
+            bDrive.setPower(-gamepad1.right_stick_y);
+
+
+        if (gamepad1.dpad_up) {
+            cDrive.setPower(0.5);
+        }else if (gamepad1.dpad_down){
             cDrive.setPower(-0.5);
         }else{
             cDrive.setPower(0);
-        }
-
-        if (gamepad1.y){
-            dDrive.setPower(0.5);
-        }
-        else{
-            dDrive.setPower(0);
         }
 
     }
